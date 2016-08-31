@@ -426,6 +426,10 @@
     NSMutableArray *newPaymentMethodNonces = [NSMutableArray arrayWithArray:self.paymentMethodNonces];
     [newPaymentMethodNonces insertObject:paymentMethodNonce atIndex:0];
     self.paymentMethodNonces = newPaymentMethodNonces;
+    
+    if ([self.delegate respondsToSelector:@selector(dropInViewController:didAddPaymentMethod:)]) {
+        [self.delegate dropInViewController:self didAddPaymentMethod:paymentMethodNonce];
+    }
 }
 
 - (void)dropInViewControllerDidCancel:(BTDropInViewController *)viewController {

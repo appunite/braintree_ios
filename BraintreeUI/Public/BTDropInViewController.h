@@ -99,6 +99,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)dropInViewControllerDidCancel:(BTDropInViewController *)viewController;
 
 @optional
+/// Informs the delegate when the user has Added new payment method
+///
+- (void)dropInViewController:(BTDropInViewController *)viewController didAddPaymentMethod:(BTPaymentMethodNonce *)paymentMethodNonce;
+
+@optional
 
 /// Informs the delegate when the Drop-in view controller has finished loading.
 ///
